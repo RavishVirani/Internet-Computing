@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <script type="text/javascript">
+            function loadTestData() {
+                var data_file = "test.xml";
+                xhr =  new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+
+                if (this.readyState == 4) {
+                    var nodes = this.responseXML.documentElement.childNodes;
+                    var membersList = document.getElementById("members");
+                    for (var i = 0; i < nodes.length; i++) {
+                        if (nodes[i].nodeType == 1) {
+                            var name = nodes[i].childNodes[0].nodeValue;
+                            var li = document.createElement("li");
+                            li.appendChild(document.createTextNode(name))
+                            membersList.appendChild(li);
+                        }
+                    }
+                }
+
+                }
+                xhr.open("GET", data_file, true);
+                xhr.send();
+            }
+        </script>
+    </head>
+	<body>
+        <p>
+            <button onclick="loadTestData()">Load family</button>
+        </p>
+        <ul id="members">
+        </ul>
+    </body>
+</html>

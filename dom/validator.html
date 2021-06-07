@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Illustrate form input validation</title>
+    <script type="text/javascript" src="validator.js"></script>
+</head>
+
+<body>
+    <h3> Customer Information </h3>
+    <form action="">
+        <p>
+            <input type="text" id="custName" /> Name (last name, first name, middle initial)
+            <br><br>
+            <input type="text" id="phone" />
+            Phone number (ddd-ddd-dddd)
+            <br><br>
+            <input type="reset"/> <input type="submit" />
+        </p>
+    </form>
+    <script type="text/javascript">
+        document.getElementById("custName").onchange = chkName;
+        document.getElementById("phone").onchange = chkPhone;
+    </script>
+</body>
+
+</html>

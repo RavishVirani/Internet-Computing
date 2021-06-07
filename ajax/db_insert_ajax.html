@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>AJAX DB Insert</title>
+
+    <script type="text/javascript">
+
+        function sendRequest() {
+            var oForm = document.forms[0];
+            var sBody = getRequestBody(oForm);
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("post", oForm.action, true);
+            xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4) {
+                    if (xhttp.status == 200) {
+                        saveResult(xhttp.responseText);
+                    } else {
+                        saveResult("An error occurred: " + xhttp.statusText);
+                    }
+                }
+            };
+            xhttp.send(sBody);
+        }
+
+        function getRequestBody(oForm) {
+            var aParams = new Array();
+            for (var i = 0; i < oForm.elements.length; i++) {
+                var sParam = encodeURIComponent(oForm.elements[i].name);
+                sParam += "=";
+                sParam += encodeURIComponent(oForm.elements[i].value);
+                aParams.push(sParam);
+            }
+            return aParams.join("&");
+        }
+
+        function saveResult(sMessage) {
+            var divStatus = document.getElementById("divStatus");
+            divStatus.innerHTML = "Request completed: " + sMessage;
+        }
+
+    </script>
+</head>
+
+<body>
+    <form method="post" action="save_customer.php" onsubmit="sendRequest(); return false">
+        <p>Enter customer information to be saved:</p>
+
+        <table>
+            <tr>
+                <td>Customer Name: </td>
+                <td><input type="text" name="txtName" value="" size="20" /> </td>
+            </tr>
+
+            <tr>
+                <td>Address: </td>
+                <td><input type="text" name="txtAddress" value="" size="20" /> </td>
+            </tr>
+
+            <tr>
+                <td>City: </td>
+                <td> <input type="text" name="txtCity" value="" size="20" /> </td>
+            </tr>
+
+            <tr>
+                <td> State:</td>
+                <td> <input type="text" name="txtState" value="" size="20" /> </td>
+            </tr>
+            <tr>
+                <td> Zip Code:</td>
+                <td><input type="text" name="txtZipCode" value="" size="20" /> </td>
+            </tr>
+            <tr>
+                <td> Phone:</td>
+                <td> <input type="text" name="txtPhone" value="" size="20" /></td>
+            </tr>
+
+            <tr>
+                <td> E-mail:</td>
+                <td> <input type="text" name="txtEmail" value="" size="20" /></td>
+            </tr>
+
+        </table>
+
+
+        <p><input type="submit" value="Save Customer Info" /></p>
+    </form>
+    <div id="divStatus"></div>
+</body>
+
+</html>

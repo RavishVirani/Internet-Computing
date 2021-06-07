@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title> Moving elements </title>
+   <script type="text/javascript">
+      function moveIt(movee, newTop, newLeft) {
+         dom = document.getElementById(movee).style;
+         dom.top = newTop + "px";
+         dom.left = newLeft + "px";
+      }
+
+   </script>
+</head>
+
+<body>
+
+   <form action="">
+      <p>
+         x coordinate: <input type="text" id="leftCoord" size="3" /> <br>
+         y coordinate: <input type="text" id="topCoord" size="3" /><br>
+         <input type="button" value="Move it" onclick="moveIt('wlulogo',  
+            document.getElementById('topCoord').value, 
+            document.getElementById('leftCoord').value)" />
+      </p>
+   </form>
+
+   <div id="wlulogo" style="position: absolute; top: 115px; left:0;">
+      <img src="../images/laurier_logo.gif" alt="(Picture of wlu logo)" />
+   </div>
+
+</body>
+
+</html>

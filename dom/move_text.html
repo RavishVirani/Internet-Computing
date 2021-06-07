@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title> Moving text </title>
+   <script type="text/javascript">
+
+      var dom, x, y, finalx = 300, finaly = 300;
+
+      function initText() {
+         dom = document.getElementById('theText').style;
+         var x = dom.left;
+         var y = dom.top;
+
+         x = x.match(/\d+/);
+         y = y.match(/\d+/);
+
+         moveText(x, y);
+      }
+
+      function moveText(x, y) {
+
+         if (x != finalx)
+            if (x > finalx) x--;
+            else if (x < finalx) x++;
+
+
+         if (y != finaly)
+            if (y > finaly) y--;
+            else if (y < finaly) y++;
+
+         if ((x != finalx) || (y != finaly)) {
+
+
+            dom.left = x + "px";
+            dom.top = y + "px";
+
+            setTimeout("moveText(" + x + "," + y + ")", 1);
+         }
+      }
+
+   </script>
+
+</head>
+
+<body onload="initText(300, 300)">
+
+ 
+   <p>
+      <span id='theText' style="position: absolute; left: 100px; 
+                                 top: 100px; 
+                                 font: bold 20pt 'Times Roman'; 
+                                 color: blue;"> Jump in the lake!
+      </span>
+   </p>
+
+</body>
+
+</html>

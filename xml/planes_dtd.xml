@@ -1,0 +1,51 @@
+<?xml version = "1.0"?>
+<?xml-stylesheet type = "text/css"  href = "planes.css" ?>
+<!DOCTYPE planes_for_sale [
+<!ELEMENT planes_for_sale (ad+)>
+<!ELEMENT ad (year, make, model, color, description, price?, seller, location)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT make (#PCDATA)>
+<!ELEMENT model (#PCDATA)>
+<!ELEMENT color (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT seller (#PCDATA)>
+<!ELEMENT location (city, state)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ATTLIST seller phone CDATA #REQUIRED>
+<!ENTITY c "Cessna">
+<!ENTITY p "Piper">
+<!ENTITY b "Beechcraft">
+]>
+
+<planes_for_sale>
+   <ad>
+      <year> 1977 &lt; </year>
+      <make> cessna </make>
+      <model> Skyhawk </model>
+      <color> Light blue and white </color>
+      <description> New paint, nearly new interior,
+            685 hours SMOH, full IFR King avionics </description>
+      <price> 23,495 </price>
+      <seller phone = "555-222-3333"> Skyway Aircraft </seller>
+      <location>
+         <city> Rapid City, </city>
+         <state> South Dakota </state>
+      </location>
+   </ad>
+   <ad>
+      <year> 1965 </year>
+      <make> Piper </make>
+      <model> Cherokee </model>
+      <color> Gold </color>
+      <description> 240 hours SMOH, dual NAVCOMs, DME, 
+                new Cleveland brakes, great shape </description>
+      <seller phone = "555-333-2222">
+              John Seller </seller>
+      <location>
+         <city> St. Joseph, </city>
+         <state> Missouri </state>
+      </location>
+   </ad>
+</planes_for_sale>

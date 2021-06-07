@@ -1,0 +1,11 @@
+[
+    {
+        "cid": "CP476",
+        "title": "Internet Computing",
+        "description": "The architecture of the Internet. Client-server programming, technologies of the web including URLs, HTML, HTTP, etc. Introduction to building web applications and server-side programming.",
+        "prerequisites": [
+            "CP363",
+            "CP372"
+        ]
+    }
+]

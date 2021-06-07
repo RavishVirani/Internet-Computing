@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- saved from url=(0124)https://mylearningspace.wlu.ca/content/enforced/366232-1111.202101/content/examples/html/css_external_include.html?ou=366232 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Font properties</title>
+   <link rel="stylesheet" type="text/css" href="../css/doc.css">
+   
+   <script>function lti_launch( vars ) { var query = ''; for(var key in vars) { if(query.length == 0) { query += '?' + key + '=' + encodeURIComponent(vars[key]); } else { query += '&' + key + '=' + encodeURIComponent(vars[key]); } } location.replace( '/d2l/customization/pearsonlti/6605/Launch' + query ); }</script><script src="./css_external_include_files/MathML.js.download"></script><script>document.addEventListener('DOMContentLoaded', function() { D2LMathML.DesktopInit('https://s.brightspace.com/lib/mathjax/2.7.4/MathJax.js?config=MML_HTMLorMML','https://s.brightspace.com/lib/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML%2cSafe','130'); });</script><script>window.addEventListener('message', function(event) { 
+					if( !event.data ) {
+						return;
+					}
+					var params;
+					try {
+						params = JSON.parse( event.data );
+					}
+					catch {
+						return;
+					}
+					if( !params.subject || params.subject !== 'lti.frameResize' ) {
+						return;
+					}
+					const MAX_FRAME_HEIGHT = 10000
+					if( !params.height || params.height < 1 || params.height > MAX_FRAME_HEIGHT ) {
+						console.warn( 'Invalid height value received, aborting' );
+						return;
+					}
+					var el = document.getElementsByTagName( 'iframe' );
+					for ( var i=0; i < el.length; i++ ) {
+						if( el[i].contentWindow === event.source ) {
+							el[i].style.height = params.height + 'px';
+							el[i].style.width = '100%';
+							console.info( 'Setting iFrame height to ' + params.height );
+							console.info( 'Setting iFrame width to 100%' );
+						}
+					}
+				});</script></head>
+
+<body>
+   <h2>Chapter 1 Introduction to Cascading Style Sheet </h2>
+   <h3>1.1 What is cacading style sheet? </h3>
+
+   <p class="big">Cascading Style Sheet (CSS) is an HTML specification developed by
+      the World Wide Web Consortium that allows authors of Web pages to attach style
+      sheets to HTML documents. Style sheets can include typographical information on
+      how the page should appear, such as the font of the text in the page. CSS also
+      directs the way in which the style sheets of the HTML document and the user's
+      style will blend. </p>
+
+   <p class="small" style="COLOR: blue; BACKGROUND-COLOR: red"> With Cascading Style
+      sheets, both Web designers and end users can create style templates (sheet) that
+      specifies how different text elements (paragraphs, headings, hyperlinks, etc.)
+      appear on a Web page. </p>
+
+   <h3>1.2 How does a style specification work? </h3>
+
+   <p class="small">Many HTML tags have associated properties that store presentation
+      information for the browsers. Browsers use default values for these properties
+      if the tags do not specify values. However these properties can be changed or
+      modified by using style sheets, which define the new values of the properties in
+      tags. There are three level of style sheets.</p>
+
+   <p class="small">The three levels of style sheets, in order from lowest level to
+      highest level, are inline, document level, and external. Inline style sheets
+      apply t the content of a single tag, document level-style sheets apply to the
+      whole body of a document, and external style sheets can apply to the body of any
+      number of doucments. From text</p>
+
+   <h3>1.4 Document-level style specificaiton </h3>
+
+   <p class="small">Document-level style specifications appear in the document head
+      section and apply to the entire body of the document. This is obvious the way to
+      impose a uniform style on the presentation of all of the content of a
+      document.</p>
+
+
+
+</body></html>

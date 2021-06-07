@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta content="text/html; charset = ISO-8859-1" http-equiv="content-type">
+
+   <script type="application/javascript">
+
+      function loadJSON() {
+         var data_file = "course.json";
+
+         var xhttp = new XMLHttpRequest();
+
+         xhttp.onreadystatechange = function () {
+            if (xhttp.readyState == 4) {
+               var jsonObj = JSON.parse(xhttp.responseText);
+               for (x in jsonObj[0]) {
+                  console.log(x + ":"+ jsonObj[0][x]);
+               }
+              document.getElementById("cid").innerHTML = jsonObj[0]['cid'];
+              document.getElementById("title").innerHTML = jsonObj[0]['title'];
+            }
+         }
+         xhttp.open("GET", data_file, true);
+         xhttp.send();
+      }
+
+   </script>
+
+   <title>tutorialspoint.com JSON</title>
+</head>
+
+<body>
+   <h1>Ajax Json</h1>
+
+   <table class="src">
+      <tr>
+         <th>CourseID</th>
+         <th>Title</th>
+      </tr>
+      <tr>
+         <td>
+            <div id="cid">CP372</div>
+         </td>
+         <td>
+            <div id="title">Computer Networks</div>
+         </td>
+      </tr>
+   </table>
+
+   <div class="central">
+      <button type="button" onclick="loadJSON()">Update Details </button>
+   </div>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="xml_loader.js"></script>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+
+        document.write('<h2>Load XML from file</h2>');
+        xmlDoc = loadXMLDoc("books.xml");
+        document.write('<h3>Node name and type</h3>');
+        document.write(xmlDoc.documentElement.nodeName + '<br>');
+        document.write(xmlDoc.documentElement.nodeType + '<br>');
+
+
+        // access child's value
+        document.write('<h3>Access node value</h3>');
+        document.write(xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue + "<br>");
+        document.write(xmlDoc.getElementsByTagName("author")[0].childNodes[0].nodeValue + "<br>");
+        document.write(xmlDoc.getElementsByTagName("year")[0].childNodes[0].nodeValue + "<br>");
+
+        x = xmlDoc.getElementsByTagName("title");
+        document.write(x[2].childNodes[0].nodeValue + '<br>');
+
+
+        x = xmlDoc.getElementsByTagName("title")[0].childNodes[0];
+        y = x.nodeValue;
+        document.write(y + "<br>");
+
+
+        document.write('<h3>Change node</h3>');
+        x = xmlDoc.getElementsByTagName("title")[0].childNodes[0];
+        x.nodeValue = "Easy Cooking";
+        x = xmlDoc.getElementsByTagName("title")[0].childNodes[0];
+        y = x.nodeValue;
+        document.write(y + "<br>");
+
+
+        document.write('<h3>Access attribute</h3>');
+        x = xmlDoc.getElementsByTagName("book")[0].attributes;
+        document.write(x.getNamedItem("category").nodeValue + "<br>");
+        document.write(x.length + "<br>");
+
+
+
+        // traversal elements
+        document.write('<h3>Traversal by loop</h3>');
+        x = xmlDoc.getElementsByTagName("title");
+        for (i = 0; i < x.length; i++) {
+            document.write(x[i].childNodes[0].nodeValue);
+            document.write("<br />");
+        }
+
+
+        document.write('<h3>Traversal all nodes</h3>');
+        x = xmlDoc.documentElement.childNodes;
+        for (i = 0; i < x.length; i++) {
+            if (x[i].nodeType == 1) {//Process only element nodes (type 1) 
+                document.write(x[i].nodeName + "<br>");
+            }
+        }
+
+
+        document.write('<h3>Loop through elements</h3>');
+        x = xmlDoc.getElementsByTagName("book")[0].childNodes;
+        y = xmlDoc.getElementsByTagName("book")[0].firstChild;
+        for (i = 0; i < x.length; i++) {
+            if (y.nodeType == 1) {//Process only element nodes (type 1)
+                document.write(y.nodeName + "<br>");
+            }
+            y = y.nextSibling;
+        }
+
+
+        document.write('<h2>Load XML from string</h2>');
+
+        text = "<book>";
+        text = text + "<title>Everyday Italian</title>";
+        text = text + "<author>Giada De Laurentiis</author>";
+        text = text + "<year>2005</year>";
+        text = text + "</book>";
+
+        xmlDoc = loadXMLString(text);
+
+        // documentElement always represents the root node
+        x = xmlDoc.documentElement.childNodes;
+        for (i = 0; i < x.length; i++) {
+            document.write(x[i].nodeName);
+            document.write(": ");
+            document.write(x[i].childNodes[0].nodeValue);
+            document.write("<br />");
+        }
+
+    </script>
+</body>
+
+</html>

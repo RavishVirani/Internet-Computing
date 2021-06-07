@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>AJAX DB Sarch</title>
+
+    <script type="text/javascript">
+        function requestCustomerInfo() {
+            var sId = document.getElementById("txtCustomerId").value;
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("get", "get_customer.php?id=" + sId, true);
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4) {
+                    if (xhttp.status == 200) {
+                        displayCustomerInfo(xhttp.responseText);
+                    } else {
+                        displayCustomerInfo("An error occurred: " + xhttp.statusText); 
+                    }
+                }
+            };
+            xhttp.send(null);
+        }
+
+        function displayCustomerInfo(sText) {
+            var divCustomerInfo = document.getElementById("divCustomerInfo");
+            divCustomerInfo.innerHTML = sText;
+        }
+    </script>
+</head>
+
+<body>
+    <p>Enter customer ID number to retrieve information:</p>
+    <p>Customer ID: <input type="text" id="txtCustomerId" value="" size="20" /></p>
+    <p><input type="button" value="Get Customer Info" onclick="requestCustomerInfo()" /></p>
+    <div id="divCustomerInfo"></div>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<html>
+<body>
+
+<h2>GET method to express_server.js, requiring express_server running</h2>
+<form action='http://localhost:3000/test' method="get">
+<input type="text" name="a" value="10"/>
+<input type="submit" value="submit"/>
+</form>
+
+<h2>POST method to express_server.js,  requiring express_server running</h2>
+<form action='http://localhost:3000/test2' method="post">
+    <input type="text" name="a" value="10"/>
+    <input type="submit" value="submit"/>
+    </form>
+</body>
+
+
+<h2>Get RESTful WS by GET method to WS express_rest.js, requiring express_rest running</h2>
+<form action='http://localhost:3000/user/list' method="get">
+<input type="submit" value="submit"/>
+</form>
+
+<h2>Get RESTful WS by POST method to WS express_rest.js, requiring express_rest running</h2>
+<form action='http://localhost:3000/addUser' method="post">
+<input type="submit" value="submit"/>
+</form>
+</body>
+</html>

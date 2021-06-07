@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+        <script type="text/javascript">
+
+            function multiload() {
+                xhr = window.ActiveXObject ? new ActiveXObject("Microsoft.XMLHTTP") : new XMLHttpRequest();
+                xhr.open("GET", "test.xml", true);
+                xhr.onreadystatechange = function() {
+                  if (this.readyState == 4) {
+                    var nodes = this.responseXML.documentElement.childNodes;
+                    var membersList = document.getElementById("members");
+                    for (var i = 0; i < nodes.length; i++) {
+                        if (nodes[i].nodeType == 1) {
+                            var name = nodes[i].childNodes[0].nodeValue;
+                            var li = document.createElement("li");
+                            li.appendChild(document.createTextNode(name))
+                            membersList.appendChild(li);
+                        }
+                    }
+                  }
+                }
+                xhr.send("");
+                
+                
+                xhr2 = window.ActiveXObject ? new ActiveXObject("Microsoft.XMLHTTP") : new XMLHttpRequest();
+                xhr2.open("GET", "https://hopper.wlu.ca/~hfan/web2.0/ajax/test2.xml", true);                
+                xhr2.onreadystatechange = function() {
+                  if (this.readyState == 4) {
+                    var nodes2 = this.responseXML.documentElement.childNodes;
+                    var membersList2 = document.getElementById("members2");
+                    for (var i = 0; i < nodes2.length; i++) {
+                        if (nodes2[i].nodeType == 1) {
+                            var name2 = nodes2[i].childNodes[0].nodeValue;
+                            var li2= document.createElement("li");
+                            li2.appendChild(document.createTextNode(name2))
+                            membersList2.appendChild(li2);
+                        }
+                    }
+                  }
+		}
+                xhr2.send("");
+            }
+
+        </script>
+    </head>
+	<body>
+        <p>
+            <button onclick="multiload()">Load family</button>
+        </p>
+        <P> The result of the first Ajax request</p>
+        <ul id="members"> </ul>
+    
+        <P> The result of the second Ajax request</p>
+        <ul id="members2"> </ul>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Visibility control</title>
+
+   <script type="text/javascript">
+
+      function flipImag(name) {
+         dom = document.getElementById(name).style;
+         if (dom.visibility == "visible")
+            dom.visibility = "hidden";
+         else
+            dom.visibility = "visible";
+      }
+   </script>
+
+</head>
+
+<body>
+
+   <form action="">
+      <div id="wlulogo" style="position:relative; visibility:visible;">
+         <img src="../images/laurier_logo.gif" alt="(Laurier Logo)" />
+      </div>
+      <p><br>
+         <input type="button" value="Toggle the logo" onclick="flipImag('wlulogo')" />
+      </p>
+   </form>
+</body>
+
+</html>

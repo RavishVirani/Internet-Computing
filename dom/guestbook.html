@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Guestbook</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+	<script language="JavaScript" type="text/javascript">
+		function validateFields(theForm) {
+			var lblName = document.getElementById("lblName");
+			var lblEmail = document.getElementById("lblEmail");
+			var lblPhone = document.getElementById("lblPhone");
+			var error = false;
+
+			if (theForm.elements["name"].value == "") {
+				error = true;
+				lblName.innerHTML = "<strong><font color=\"Red\">You cannot leave your name blank!</font></strong>";
+			}
+			else {
+				lblName.innerHTML = "";
+			}
+
+			// Check for phone number ###-###-####
+			var phone = new String(theForm.elements["phone"].value);
+			if (!phone.match(/\d{3}-\d{3}\-\d{4}/)) {
+				error = true;
+				lblPhone.innerHTML = "<strong><font color=\"Red\">Your phone number does not match the syntax ###-###-####!</font></strong>";
+			}
+			else {
+				lblPhone.innerHTML = "";
+			}
+
+			// Check that e-mail matches
+			// [a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*\s+<(\w[-._\w]*\w@\w[-._\w]*\w\.\w{2,3})>$|^(\w[-._\w]*\w@\w[-._\w]*\w\.\w{2,3})$
+			var m = /[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*\s+<(\w[-._\w]*\w@\w[-._\w]*\w\.\w{2,3})>$|^(\w[-._\w]*\w@\w[-._\w]*\w\.\w{2,3})$/;
+			var email = new String(theForm.elements["email"].value);
+			if (!email.match(m)) {
+				error = true;
+				lblEmail.innerHTML = "<strong><font color=\"Red\">The e-mail address you provided is not valid.</font></strong>";
+			}
+			else {
+				lblEmail.innerHTML = "";
+			}
+
+			return (!error);
+		}
+	</script>
+
+
+</head>
+
+<body>
+	<h2>Guestbook</h2>
+
+	<form action="guestbookdb.pl" method="post" onSubmit="javascript:return validateFields(this);">
+
+		<table width="440" border="0" cellspacing="5px" cellpadding="0" align="left" height="1">
+			<tr>
+				<td width="49" height="22"><strong>Name</strong></td>
+				<td height="22" width="153">
+					<input name="name" type="text" id="name" size="20">
+				</td>
+				<td width="218">
+					<div id="lblName">Can not be blank!</div>
+				</td>
+
+			</tr>
+			<tr>
+				<td height="22" width="49"><strong>E-mail</strong></td>
+				<td height="22" width="153"><input name="email" type="text" id="email" size="20"></td>
+				<td width="218">
+					<div id="lblEmail">Must have format: ccc@ccc.ccc !</div>
+				</td>
+
+			</tr>
+			<tr>
+				<td height="22" width="49"><strong>Phone</strong></td>
+				<td height="22" width="153">
+					<input name="phone" type="text" id="phone" size="20">
+				</td>
+				<td width="218">
+					<div id="lblPhone">Must have format: ###-###-#### !</div>
+				</td>
+
+			</tr>
+			<tr>
+				<td colspan="2" align="center" height="26" width="207">
+					<p align="left">
+						<input type="submit" name="Submit" value="Submit" style="float: left">
+						<input type="reset" name="Reset" value="Reset" style="float: left">
+				</td>
+			</tr>
+		</table>
+
+	</form>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title> Dynamic colors </title>
+
+   <script type="text/javascript">
+
+      function setColor(where, newColor) {
+         if (where == "background")
+            document.body.style.backgroundColor = newColor;
+         else
+            document.body.style.color = newColor;
+      }
+
+   </script>
+
+</head>
+
+<body>
+   <p style="font-family: Times; font-style: italic; font-size: 24pt">
+      This small page illustrates dynamic setting of the foreground and background colors for a document
+   </p>
+
+   <form action="">
+      <p>
+         Type a background color (e.g., red, green, blue) :
+         <input type="text" name="background" size="10" onchange="setColor('background', this.value)" />
+         <br><br>
+         Type foreground color (e.g., red, green, blue):
+         <input type="text" name="foreground" size="10" onchange="setColor('foreground', this.value)" />
+      </p>
+   </form>
+
+</body>
+
+</html>

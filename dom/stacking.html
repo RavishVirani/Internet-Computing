@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<html>
+
+<head>
+   <title> Dynamic stacking of images </title>
+   <script type="text/javascript">
+      var topimage = "p2";
+      function toTop(newTop) {
+         domTop = document.getElementById(topimage).style;
+         domNew = document.getElementById(newTop).style;
+         domTop.zIndex = "0";
+         domNew.zIndex = "10";
+         topimage = newTop;
+      }
+
+   </script>
+
+   <style type="text/css">
+      .p1 {
+         position: absolute;
+         top: 0;
+         left: 0;
+         z-index: 2;
+      }
+
+      .p2 {
+         position: absolute;
+         top: 50px;
+         left: 100px;
+         z-index: 3;
+      }
+
+      .p3 {
+         position: absolute;
+         top: 25px;
+         left: 125px;
+         z-index: 0;
+      }
+   </style>
+
+</head>
+
+<body>
+   <p>
+      <img class="p1" id="p1" src="../images/laurier_logo.gif" alt="WLU logo" onclick="toTop('p1')" />
+
+      <img class="p2" id="p2" src="../images/laurier_logo.gif" alt="WLU logo" onclick="toTop('p2')" />
+
+      <img class="p3" id="p3" src="../images/laurier_logo.gif" alt="WLU logo" onclick="toTop('p3')" />
+   </p>
+</body>
+
+</html>

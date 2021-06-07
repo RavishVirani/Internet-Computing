@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>A universal example of HTML</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Form example</h3>
+
+    <form action="popcorn.py" method="get">
+        <table>
+            <!-- Text widgets for name and address -->
+            <tbody>
+                <tr>
+                    <td>Buyer's Name: </td>
+                    <td><input size="30" name="name"> </td>
+                </tr>
+                <tr>
+                    <td>Street Address: </td>
+                    <td><input size="30" name="street"> </td>
+                </tr>
+                <tr>
+                    <td>City, State, Zip: </td>
+                    <td><input size="30" name="city"> </td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <!-- First, the column headings -->
+            <tbody>
+                <tr>
+                    <th>Product Name </th>
+                    <th>Price </th>
+                    <th>Quantity </th>
+                </tr>
+                <!-- Now, the table data entries -->
+                <tr>
+                    <td>Unpopped Popcorn (1 lb.) </td>
+                    <td>$3.00 </td>
+                    <td><input size="2" name="unpop"> </td>
+                </tr>
+                <tr>
+                    <td>Caramel Popcorn (2 lb. canister) </td>
+                    <td>$3.50 </td>
+                    <td><input size="2" name="caramel"> </td>
+                </tr>
+                <tr>
+                    <td>Caramel Nut Popcorn (2 lb. canister) </td>
+                    <td>$4.50 </td>
+                    <td><input size="2" name="caramelnut"></td>
+                </tr>
+                <tr>
+                    <td>Toffey Nut Popcorn (2 lb. canister) </td>
+                    <td>$5.00 </td>
+                    <td><input size="2" name="toffeynut">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            <!-- The radio buttons for the payment method -->
+        </p>
+        <h3>Payment Method: </h3>
+        <p><input checked="checked" value="visa" name="payment" type="radio"> Visa </p>
+        <p><input value="mc" name="payment" type="radio"> Master Card </p>
+        <p><input value="discover" name="payment" type="radio"> Discover </p>
+        <p><input value="check" name="payment" type="radio"> Check </p>
+        <h3>Delivery Method: </h3>
+        <select name="delivery">
+            <option selected="selected">Pick up (no charge)</option>
+            <option>Regular mail ($1 per unit)</option>
+            <option>Express ($2 per unit)</option>
+        </select>
+        <p><br>
+        </p>
+
+        <!-- text area -->
+        <h3>Comments </h3>
+        <p><textarea name="comments" rows="3" cols="40">(Be brief and concise) </textarea> </p>
+        <!-- The submit and reset buttons -->
+        <p><input value="Submit Order" type="submit"></p>
+        <p><input value="Clear Order Form" type="reset">
+        </p>
+    </form>
+
+</body>
+
+</html>

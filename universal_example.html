@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>A universal example of HTML</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+<script>function lti_launch( vars ) { var query = ''; for(var key in vars) { if(query.length == 0) { query += '?' + key + '=' + encodeURIComponent(vars[key]); } else { query += '&' + key + '=' + encodeURIComponent(vars[key]); } } location.replace( '/d2l/customization/pearsonlti/6605/Launch' + query ); }</script><script src="/d2l/common/math/MathML.js?v=20.20.12.26371-150"></script><script>document.addEventListener('DOMContentLoaded', function() { D2LMathML.DesktopInit('https://s.brightspace.com/lib/mathjax/2.7.4/MathJax.js?config=MML_HTMLorMML','https://s.brightspace.com/lib/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML%2cSafe','130'); });</script><script>window.addEventListener('message', function(event) { 
+					if( !event.data ) {
+						return;
+					}
+					var params;
+					try {
+						params = JSON.parse( event.data );
+					}
+					catch {
+						return;
+					}
+					if( !params.subject || params.subject !== 'lti.frameResize' ) {
+						return;
+					}
+					const MAX_FRAME_HEIGHT = 10000
+					if( !params.height || params.height < 1 || params.height > MAX_FRAME_HEIGHT ) {
+						console.warn( 'Invalid height value received, aborting' );
+						return;
+					}
+					var el = document.getElementsByTagName( 'iframe' );
+					for ( var i=0; i < el.length; i++ ) {
+						if( el[i].contentWindow === event.source ) {
+							el[i].style.height = params.height + 'px';
+							el[i].style.width = '100%';
+							console.info( 'Setting iFrame height to ' + params.height );
+							console.info( 'Setting iFrame width to 100%' );
+						}
+					}
+				});</script></head>
+
+<body>
+
+    <!-- paragraph <p>...</p>, break <br /> -->
+    <h2>1. Paragraph</h2>
+    <p>An arcticle always has paragraphs. A paragraph often has a line break.
+        Check the source code, see the tag for paragraph and line break. </p>
+
+    <!-- heading -->
+    <h2 id="beginning">2. Heading </h2>
+
+    <p>An article should have a title, and maybe some subtitiles.
+        Check the source code to see the six level of headings </p>
+    <h1>Aidan's Airplanes (h1) </h1>
+    <h2>The best in used airplanes (h2) </h2>
+    <h3>"We've got them by the hangarful" (h3) </h3>
+    <h4>We're the guys to see for a good used airplane (h4) </h4>
+    <h5>We offer great prices on great planes (h5) </h5>
+    <h6>No returns, no guarantees, no refunds, all sales are final! (h6) </h6>
+
+
+    <!-- Preformat is a very useful tag for cgi programming -->
+    <h2>3. Preformatted text</h2>
+
+    <p>&lt;pre&gt; tag defines preformatted text. The text
+        enclosed in the pre element usually preserves spaces and line breaks.
+        The text renders in a fixed-pitch font.</p>
+
+    <pre>This is preformatted. </pre>
+    <pre>
+             \|/
+             -*-
+             /|\
+              |
+             / \
+            /   \
+           /  *  \
+          /_   * _\
+           /     \
+          /       \
+         /  *    * \
+        /_         _\
+         /         \
+        /       *   \
+       /   *         \
+      / *        *  * \
+     /_________________\
+             | |
+   __________|_|__________
+</pre>
+
+
+    <!-- quotation -->
+    <h2>4. Quotation <br><br>&nbsp;</h2>
+
+    <pre>A quotation makes a text look different from the surrounding text. </pre>
+
+    <p>Abraham Lincoln is generally regarded as one of the greatest
+        presidents of the U.S. His most famous speech was delivered in
+        Gettysburg, Pennsylvania, during the Civil War. This speech began with </p>
+
+    <blockquote>
+        <p>"Fourscore and seven years ago our fathers brought forth on
+            this continent, a new nation, conceived in Liberty, and dedicated to
+            the proposition that all men are created equal. </p>
+        <p>Now we are engaged in a great civil war, testing whether
+            that nation or any nation so conceived and so dedicated, can long
+            endure." </p>
+    </blockquote>
+
+    <p>Whatever one's opinion of Lincoln, no one can deny the
+        enormous and lasting effect he had on the U.S. </p>
+
+    <!-- font sytle and sizes -->
+    <h2>5. Font Style, Sizes and color </h2>
+
+    <p style="font-family: Times, serif">Frequently one needs to set off or emphasize words or phrases in text. </p>
+    <p style="font-size: 40px;">Mary had a little lamb</p>
+    <p style="font-size: 20px;">Mary had a little lamb</p>
+    <p>Mathematicans like formula x<sub>2</sub><sup>3</sup>+y<sub>1</sub><sup>2</sup></p>
+    <p>A monospace font looks like this <span style="font-family: monospace, monospace;">Mary had a little lamb.</span>
+    </p>
+    <p><i>When a new term appears, one like to make it italic.</i></p>
+    <p><b>Sometimes boldface is used to emphasize.</b></p>
+    <p>Check the source code see how these specil entities are made:
+        &amp;, &lt;, &gt;, ", &frac14;, &frac12;,
+        &frac34;, &deg;, (space) &nbsp;.</p>
+    <p>One may need a rule to separate a context.</p>
+    <p>color of font can specified by font tag, with color attibute, a color can be defined by name or RGB value</p>
+    <p>
+        <span style="color:red">Red</span>
+        <span style="color:green">Green</span>
+        <span style="color:blue">Blue</span>
+    </p>
+
+    <p>There are a lot more tags for font syles</p>
+    <cite>citation</cite>, <code>code</code>, <samp>literal</samp>,
+    <dfn>definition</dfn> <em>exphasize</em>,<kbd>keyboard
+        charaters</kbd>, <strong>strongly emphasize</strong>
+    <var>variable name</var>
+
+    <!-- image -->
+    <h2>6. Image </h2>
+
+    <p>A picture worths a thousand words.</p>
+
+    <img alt="Laurier logo" src="../images/laurier_logo.gif?_&amp;d2lSessionVal=sDg8sFUl2N0VVbqIn3jduVVKC" height="75" width="249">
+    <hr>
+
+    <!-- hyper links -->
+    <h2>7. Hypertext link</h2>
+
+    <p>The most important feature of hypertext is hyper links. Links are usinig anchor tag with with the the target URL
+        Let's link to the <a href="https://bohr.wlu.ca/hfan/cp476/code/universal_example.html">this html page on remote
+            web server</a>. </p>
+
+    <p>A targe can be a point in a document. This <a
+            href="https://bohr.wlu.ca/hfan/cp476/code/universal_example.html#beginning">link
+        </a>goes to the begiinning of the this page. The target must be defined in an element using id option.
+        Check the source code at position 2.Heading. Link can also be made to a specific position in
+        another html file. </p>
+    <hr>
+
+
+
+    <h2>8. List</h2>
+
+    <p>We frequently make and use lists to make a context clear. There are two
+        kind of lists, unordered list, and ordered list. A unordered list looks
+        like this.</p>
+
+    <p>A computer has five components: </p>
+
+    <ul>
+        <li>CPU</li>
+        <li>Storage device such as memory and hard drive</li>
+        <li>Output device such as a display</li>
+        <li>Input device such as a keyboard</li>
+        <li>Programs such as an operating system</li>
+    </ul>
+
+    <p>An ordered list looks like the following. It contains a nested
+        ordered and unordered lists.</p>
+    <p>A computer has five components: </p>
+    <ol>
+        <li>CPU </li>
+        <li>Storage device
+            <ol>
+                <li>memory </li>
+                <li>hard drive </li>
+            </ol>
+        </li>
+        <li>Output device such as a display </li>
+        <li>Input device
+            <ul>
+                <li>keyboard </li>
+                <li>mouse </li>
+            </ul>
+        </li>
+        <li>Programs such as an operating system </li>
+    </ol>
+
+    <p>More general list can be made by definition. </p>
+    <dl>
+        <dt>152 </dt>
+        <dd>Two-place trainer </dd>
+        <dt>172 </dt>
+        <dd>Smaller four-place airplane </dd>
+        <dt>182 </dt>
+        <dd>Larger four-place airplane </dd>
+        <dt>210 </dt>
+        <dd>Six-place airplane - high performance </dd>
+    </dl>
+    <hr>
+
+
+    <!-- Table -->
+    <h2>9. Table </h2>
+
+    <p>Tables are often used to show relevant data.</p>
+    <p>A simple table without border</p>
+    <table>
+        <tbody>
+            <tr>
+                <th>Breakfast</th>
+                <td>0</td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>A more complicate table</p>
+    <table>
+        <caption>Fruit Juice Drinks </caption>
+        <tbody>
+            <tr>
+                <th></th>
+                <th>Apple </th>
+                <th>Orange </th>
+                <th>Screwdriver </th>
+            </tr>
+            <tr>
+                <th>Breakfast </th>
+                <td>0 </td>
+                <td>1 </td>
+                <td>0 </td>
+            </tr>
+            <tr>
+                <th>Lunch </th>
+                <td>1 </td>
+                <td>0 </td>
+                <td>0 </td>
+            </tr>
+            <tr>
+                <th>Dinner </th>
+                <td>0 </td>
+                <td>0 </td>
+                <td>1 </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>A table with cell span</p>
+    <table>
+        <caption>Fruit Juice Drinks and Meals </caption>
+        <tbody>
+            <tr>
+                <td rowspan="2"></td>
+                <th colspan="3">Fruit Juice Drinks </th>
+            </tr>
+            <tr>
+                <th>Apple </th>
+                <th>Orange </th>
+                <th>Screwdriver </th>
+            </tr>
+            <tr>
+                <th>Breakfast </th>
+                <td>0 </td>
+                <td>1 </td>
+                <td>0 </td>
+            </tr>
+            <tr>
+                <th>Lunch </th>
+                <td>1 </td>
+                <td>0 </td>
+                <td>0 </td>
+            </tr>
+            <tr>
+                <th>Dinner </th>
+                <td>0 </td>
+                <td>0 </td>
+                <td>1 </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>A table with cell alignment</p>
+    <table>
+        <caption>The align and valign attributes </caption>
+        <tbody>
+            <tr style="text-align: center;">
+                <th></th>
+                <th>Column Label </th>
+                <th>Another One </th>
+                <th>Still Another One </th>
+            </tr>
+            <tr>
+                <th>align </th>
+                <td style="text-align: left;">Left</td>
+                <td style="text-align: center;">Center</td>
+                <td style="text-align: right;">Right</td>
+            </tr>
+            <tr>
+                <th><br>
+                    valign <br>
+                    <br>
+                </th>
+                <td>Default </td>
+                <td style="text-align: center; vertical-align: top;">Top </td>
+                <td style="text-align: center; vertical-align: bottom;">Bottom </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>A table with cellpadding and cellspacing</p>
+    <table style="padding: 50px;">
+        <tbody>
+            <tr>
+                <td>colorado is a state of contrasts. The eastern half is a
+                    mostly treeless prairie. On the prairie, trees grow only in the Platte
+                    and Arkansas river valleys, with a few found along a few other small
+                    streams. The forested Rocky Mountains rise abruptly from the high
+                    plains about midway from east to west and cover most of the western
+                    half of the state. There are 54 mountains in colorado that top 14,000
+                    feet. </td>
+                <td>South Dakota is somewhat similar to colorado in that it
+                    is a mostly treeless prairie in the east, but has a range of forested
+                    mountains in the west. But in South Dakota, the mountains, named the
+                    Black Hills, lie only in the far western part of the state and rise to
+                    only a little over 7500 feet. However, they are still the highest
+                    mountains east of the Rockies in the U.S. The famous Mount Rushmore is
+                    nestled in the middle of the Black Hills. </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <table style="padding: 50px;">
+        <tbody>
+            <tr>
+                <td>colorado is a state of contrasts. The eastern half is a
+                    mostly treeless prairie. On the prairie, trees grow only in the Platte
+                    and Arkansas river valleys, with a few found along a few other small
+                    streams. The forested Rocky Mountains rise abruptly from the high
+                    plains about midway from east to west and cover most of the western
+                    half of the state. There are 54 mountains in colorado that top 14,000
+                    feet. </td>
+                <td>South Dakota is somewhat similar to colorado in that it
+                    is a mostly treeless prairie in the east, but has a range of forested
+                    mountains in the west. But in South Dakota, the mountains, named the
+                    Black Hills, lie only in the far western part of the state and rise to
+                    only a little over 7500 feet. However, they are still the highest
+                    mountains east of the Rockies in the U.S. The famous Mount Rushmore is
+                    nestled in the middle of the Black Hills. </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+
+
+
+    <!-- Form -->
+    <h2>10. Form </h2>
+
+    <p>Forms are an important entities in client programming. We cab use form
+        to submit our request for the execution of a a server program.</p>
+
+    <h3>1. Text </h3>
+
+
+    <form action="???">
+        <p>Name: <input size="30" name="name"> </p>
+        <p>Password<br>
+            &nbsp;<br>
+            <input maxlength="8" size="8" value="old_password" name="set_password" type="password">
+        </p>
+    </form>
+
+
+    <p>This field does not provide any true security; it simply
+        provides basic protection against someone looking over the shoulder of
+        the user. The value is <em class="emphasis">not</em>
+        encrypted when it is transferred to the web server, which means that
+        passwords are displayed as part of the query string for GET requests.</p>
+
+
+    <h3>2. Hidden field</h3>
+
+    <p>Hidden fields are not visible to the user. They are generally used only
+        with forms which are themselves generated by a CGI script and are
+        useful for passing information between a series of forms. &lt;INPUT
+        TYPE="hidden" NAME="username" VALUE="msmith"&gt; <input value="msmith" name="username" type="hidden">
+        &nbsp;</p>
+
+    <p>Like password fields, hidden fields provide no security. Users
+        can view the name and value of hidden fields by viewing the HTML source
+        in their browsers.</p>
+
+
+    <h3>3. Checkbox</h3>
+
+    <form action="???">
+        <p><input checked="checked" value="milk" name="groceries" type="checkbox"> Milk <input value="bread"
+                name="groceries" type="checkbox">
+            Bread <input value="eggs" name="groceries" type="checkbox"> Eggs </p>
+    </form>
+
+
+    <h3>4. Radio button</h3>
+
+
+    <form action="???">
+        <p><input checked="checked" value="under20" name="age" type="radio"> 0-19 <input value="20-35" name="age"
+                type="radio"> 20-35 <input value="36-50" name="age" type="radio"> 36-50 <input value="over50" name="age"
+                type="radio"> Over
+            50 </p>
+    </form>
+
+
+
+    <h3>5. Menu</h3>
+
+    <form action="???">
+        <p>With size = 1 (the default)
+            <select name="groceries">
+                <option selected="selected">milk</option>
+                <option>bread</option>
+                <option>eggs</option>
+                <option>cheese</option>
+            </select>
+        </p>
+    </form>
+
+
+    <h3>6. Text area</h3>
+
+    <form action="???">
+        <p><textarea name="aspirations" rows="3" cols="40"> (Be brief and concise) </textarea> </p>
+    </form>
+
+
+    <h3>7. File upload</h3>
+
+    <form action="???">
+        <p>Portrait: <input name="new_file" size="20" type="file"></p>
+    </form>
+
+
+    <h3>8. Submit and reset</h3>
+
+    <form action="???">
+        <p><input value="Submit Order" type="submit"><input value="Clear Order Form" type="reset"> </p>
+    </form>
+
+
+    <h2>11. Frames </h2>
+
+    <p>Frame tag can divide the display window into rows and columns,
+        each area can display one html document.<a href="frames.html">
+            example1</a>, <a href="nested_frames.html">example2 </a>
+    </p>
+
+    <h2>12. Span tag</h2>
+    <p>Span can be used to define the style of <span style="background-color: rgb(255, 255, 0);"> a part in
+            within another tag </span> section. like <span style="color: rgb(255, 0, 255);">color</span> in a
+        paragraph. </p>
+    <p>Use span to create a <span title="hello"><b>pop
+                message, place your mouse here</b></span>.
+        <br>
+        &nbsp;
+    </p>
+
+    <h2>13. div tag</h2>
+    <div style="text-align: center;">This text is completely right-aligned
+        which means that every line<br>
+        aligns to the right side of the page.<br>
+    </div>
+    <div style="text-align: center;">This text is completely center-aligned
+        which means that every line<br>
+        aligns to the middle of the page.<br>
+    </div>
+    <div style="width: 200px; text-align: center;">
+        Hello there, this is just some text to see how the alignment of text
+        inside a
+        division looks like. It's not a very interesting text, but I just had
+        to have
+        some text to create the example.
+    </div>
+    <br>
+    <br>
+    <div style="width: 200px; text-align:justify;">
+        Hello there, this is just some text to see how the alignment of text
+        inside a division looks like. It's not a very interesting text, but I
+        just had
+        to have some text to create the example.
+    </div>
+    <br>
+    <div style="position: relative; width: 730px; height: 200px; background-color: green;">
+        <!--This is the containing div position: relative to flow in sequence with the rest of the page-->
+        <div style="position: absolute; top: 70px; left: 255px; width: 240px; background-color: azure;">position:
+            absolute; top: 70px; left: 255px; width: 240px; background-color:
+            azure; overall width 248px including 2*3px padding and 2*1px border;
+            (no height)</div>
+        <div style="position: absolute; top: 10px; left: 5px; width: 240px; height: 150px; background-color: pink;">
+            position: absolute; top: 10px; left: 5px; width: 240px; height: 150px;
+            background-color: pink; overall width 248px including 2*3px padding and
+            2*1px border </div>
+        <div style="position: absolute; top: 25px; left: 505px; width: 210px; height: 125px; background-color: yellow;">
+            position: absolute; top: 25px; left: 505px; width: 210px; height:
+            125px; background-color: yellow; overall width 218px including 2*3px
+            padding and 2*1px border</div>
+    </div>
+
+
+    <h2>14. HTML5 Validation </h2>
+
+    <p>You can validate your html5 document by <a href="https://html5.validator.nu/">HTML5 validation service</a></p>
+
+
+</body>
+
+</html>

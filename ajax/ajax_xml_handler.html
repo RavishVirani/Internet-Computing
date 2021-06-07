@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html>
+<html>
+	<head>
+        <script type="text/javascript">
+
+            function processResponse() {
+                if (xhr.readyState == 4) {
+                    var nodes = xhr.responseXML.documentElement.childNodes;
+                    var membersList = document.getElementById("members");
+                    for (var i = 0; i < nodes.length; i++) {
+                        if (nodes[i].nodeType == 1) {
+                            var name = nodes[i].childNodes[0].nodeValue;
+                            var li = document.createElement("li");
+                            li.appendChild(document.createTextNode(name))
+                            membersList.appendChild(li);
+                        }
+                    }
+                }
+            }
+
+            function loadTestData() {
+                xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = processResponse;
+                xhr.open("GET", "test.xml", true);
+                xhr.send("");
+            }
+        </script>
+    </head>
+	<body>
+        <p>
+            <button onclick="loadTestData()">Load family</button>
+        </p>
+        <ul id="members">
+        </ul>
+    </body>
+</html>

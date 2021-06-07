@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Illustrate messages for radio buttons </title>
+    <script type="text/javascript">
+
+        function planeChoice() {
+            var plane;
+            var radioElement = document.getElementById("myForm").elements;
+
+            for (var index = 0; index < radioElement.length; index++) {
+                if (radioElement[index].checked) {
+                    plane = radioElement[index].value;
+                    break;
+                }
+            }
+            switch (plane) {
+                case "152":
+                    alert("A small two-place-airplane for flight training");
+                    break;
+                case "172":
+                    alert("The smaller of two four-place airplanes");
+                    break;
+                case "182":
+                    alert("The larger of two four-place airplanes");
+                    break;
+                case "210":
+                    alert("A six-place high-performance airplane");
+                    break;
+                default:
+                    alert("Error in JavaScript function planeChoice");
+                    break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h4> Cessna single-engine airplane descriptions </h4>
+    <form id="myForm" action="">
+        <p>
+            <input type="radio" name="planeButton" value="152" onclick="planeChoice()" />
+            Model 152
+            <br />
+            <input type="radio" name="planeButton" value="172" onclick="planeChoice()" />
+            Model 172 (Skyhawk)
+            <br />
+            <input type="radio" name="planeButton" value="182" onclick="planeChoice()" />
+            Model 182 (Skylane)
+            <br />
+            <input type="radio" name="planeButton" value="2" onclick="planeChoice()" checked />Model 210 (Centurian)
+        </p>
+    </form>
+    <p>&nbsp;</p>
+</body>
+
+</html>
