@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+   <title>Client Sum Calculation JQuery</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script>
+      function sum() {
+         var n1 = $("#num1").val();
+         var n2 = $("#num2").val();
+         var out = "<h2>invalid input</h2>";
+         if (!isNaN(parseFloat(n1)) && !isNaN(parseFloat(n2))) {
+            result = parseFloat(n1) + parseFloat(n2);
+            out = "<h2>" + n1 + " + " + n2 + " = " + result + "</h2>";
+         }
+         $("#target").html(out);
+
+      }
+
+      function sum1() {
+         var n1 = $("#n1").val();
+         var n2 = $("#n2").val();
+         var out = "<h2>invalid input</h2>";
+         if (!isNaN(parseFloat(n1)) && !isNaN(parseFloat(n2))) {
+            result = parseFloat(n1) + parseFloat(n2);
+            out = "<h2>" + n1 + " + " + n2 + " = " + result + "</h2>";
+         }
+         $("#target").html(out);
+
+      }
+
+      $(document).ready(function () {
+         $("#btn").click(sum1);
+ 
+         /*
+         $("#btn").click(function () {
+            var n1 = $("#n1").val();
+            var n2 = $("#n2").val();
+            var out = "<h2>invalid input</h2>";
+            if (!isNaN(parseFloat(n1)) && !isNaN(parseFloat(n2))) {
+               result = parseFloat(n1) + parseFloat(n2);
+               out = "<h2>" + n1 + " + " + n2 + " = " + result + "</h2>";
+            }
+            $("#target").html(out);
+          });
+          */
+      });
+   </script>
+</head>
+
+<body>
+   <h2 id="target">The sum will be shown here</h2>
+
+   <h3>Use form button click event</h3>
+   <form action="">
+      <table>
+         <tbody>
+            <tr>
+               <td>First Number</td>
+               <td><input size="10" id="num1" /> </td>
+            </tr>
+            <tr>
+               <td>Second Number</td>
+               <td><input size="10" id="num2" /> </td>
+            </tr>
+         </tbody>
+      </table>
+      <input value="reset" type="reset" /> <input type="button" value="Calculate the sum" onclick="sum()">
+   </form>
+
+
+   <h3>Use JQuery element click event.</h3>
+
+   <form action="">
+      <table>
+         <tbody>
+            <tr>
+               <td>First Number</td>
+               <td><input size="10" id="n1" /> </td>
+            </tr>
+            <tr>
+               <td>Second Number</td>
+               <td><input size="10" id="n2" /> </td>
+            </tr>
+         </tbody>
+      </table>
+      <input value="reset" type="reset" /> <input type="button" value="Calculate the sum" id="btn">
+   </form>
+
+</body>
+
+</html>

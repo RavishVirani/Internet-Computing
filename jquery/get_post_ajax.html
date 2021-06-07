@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Jquery example</title>
+  <script src="jquery-3.5.1.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $("#getbtn").click(function () {
+        $.get("customer_xml.php",
+           {cid:1},
+          function (data, status) {
+
+            alert("Data: " +  $(data).find("name").text() + "\nStatus: " + status);
+
+          });
+      });
+
+      $("#postbtn").click(function () {
+        $.post("customer_json.php",
+          { cid: 1 },
+          function (data, status) {
+            // data is in text format, can be converted to json object for processing
+            alert("Data: " + data + "\nStatus: " + status);
+          });
+      });
+
+    });
+  </script>
+</head>
+
+<body>
+
+  <button id="getbtn">Send an HTTP GET request to a page and get the result back</button>
+
+  <br><br>
+
+  <button id="postbtn">Send an HTTP POST request to a page and get the result back</button>
+
+</body>
+
+</html>

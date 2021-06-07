@@ -1,0 +1,199 @@
+# A2 Report
+
+Author: Ravish Virani
+
+Date: 07-February-2021
+
+## T1 Perl & CGI
+### T1.1 Hand-on Perl
+
+
+Complete (Yes)? 
+
+If Yes, include (link) the screen shot image as following using `![image caption](images/demo.png)` to prove completion, and/or add a link to the question solution if applicable. 
+
+<img src="C:\cp476\a2\images\T1.1_1.png" style="zoom:60%;" />
+
+<img src="C:\cp476\a2\images\t1.1_2.png" style="zoom:60%;" />
+
+If No, add a short description to describe the issues encountered.
+
+### T1.2 Perl CGI
+
+
+Complete (Yes/No)? 
+
+If Yes, include (link) the screen shot image as following using `![image caption](images/demo.png)` to prove completion, and/or add a link to the question solution if applicable. 
+
+<!--
+![Screen shot demo (image caption)](images/demo.png){width=600px}
+-->
+
+If No, add a short description to describe the issues encountered.
+
+
+## T2 PHP & CGI
+### T2.1 Hand-on PHP
+
+
+Complete (Yes/No)? 
+
+If Yes, include (link) the screen shot image as following using `![image caption](images/demo.png)` to prove completion, and/or add a link to the question solution if applicable. 
+
+<!--
+![Screen shot demo (image caption)](images/demo.png){width=600px}
+-->
+
+If No, add a short description to describe the issues encountered.
+
+### T2.2 PHP CGI
+
+
+Complete (Yes/No)? 
+
+If Yes, include (link) the screen shot image as following using `![image caption](images/demo.png)` to prove completion, and/or add a link to the question solution if applicable. 
+
+<!--
+![Screen shot demo (image caption)](images/demo.png){width=600px}
+-->
+
+If No, add a short description to describe the issues encountered.
+
+### T2.3 PHP & MySQL
+
+
+Complete (Yes/No)? 
+
+If Yes, include (link) the screen shot image as following using `![image caption](images/demo.png)` to prove completion, and/or add a link to the question solution if applicable. 
+
+<!--
+![Screen shot demo (image caption)](images/demo.png){width=600px}
+-->
+
+If No, add a short description to describe the issues encountered.
+
+
+## T3 Python CGI
+### T3.1 Python CGI
+
+
+Complete (Yes/No)? 
+
+If Yes, include (link) the screen shot image as following using `![image caption](images/demo.png)` to prove completion, and/or add a link to the question solution if applicable. 
+
+<!--
+![Screen shot demo (image caption)](images/demo.png){width=600px}
+-->
+
+If No, add a short description to describe the issues encountered.
+
+
+## Q1 Web mortgage calculator
+### Q1.1 mortgage.html
+
+
+
+Complete (Yes/No)? 
+
+If Yes, include (link) the screen shot image as following using `![image caption](images/demo.png)` to prove completion, and/or add a link to the question solution if applicable. 
+
+<!--
+![image caption](images/demo.png){width=95%}
+-->
+
+If No, add a short description to describe the issues encountered.
+
+### Q1.2 mortgage.pl
+
+
+
+Complete (Yes/No)? 
+
+If Yes, include (link) the screen shot image as following using `![image caption](images/demo.png)` to prove completion, and/or add a link to the question solution if applicable. 
+
+<!--
+![image caption](images/demo.png){width=95%}
+-->
+
+If No, add a short description to describe the issues encountered.
+
+
+## Q2 Web abstraction analyzer
+### Q2.1 abstract.html
+
+
+
+Complete (Yes/No)? 
+
+If Yes, include (link) the screen shot image as following using `![image caption](images/demo.png)` to prove completion, and/or add a link to the question solution if applicable. 
+
+<!--
+![image caption](images/demo.png){width=95%}
+-->
+
+If No, add a short description to describe the issues encountered.
+
+### Q2.2 abstract.pl
+
+
+
+Complete (Yes/No)? 
+
+If Yes, include (link) the screen shot image as following using `![image caption](images/demo.png)` to prove completion, and/or add a link to the question solution if applicable. 
+
+<!--
+![image caption](images/demo.png){width=95%}
+-->
+
+If No, add a short description to describe the issues encountered.
+
+
+## Q3 PHP CGI
+### Q3.1 Visitor tracker
+
+
+
+Complete (Yes/No)? 
+
+If Yes, include (link) the screen shot image as following using `![image caption](images/demo.png)` to prove completion, and/or add a link to the question solution if applicable. 
+
+<!--
+![image caption](images/demo.png){width=95%}
+-->
+
+If No, add a short description to describe the issues encountered.
+
+### Q3.2 Searching bookshelf
+
+
+
+Complete (Yes/No)? 
+
+If Yes, include (link) the screen shot image as following using `![image caption](images/demo.png)` to prove completion, and/or add a link to the question solution if applicable. 
+
+<!--
+![image caption](images/demo.png){width=95%}
+-->
+
+If No, add a short description to describe the issues encountered.
+
+### Q3.3 Listing dependent courses
+
+
+
+Complete (Yes/No)? 
+
+If Yes, include (link) the screen shot image as following using `![image caption](images/demo.png)` to prove completion, and/or add a link to the question solution if applicable. 
+
+<!--
+![image caption](images/demo.png){width=95%}
+-->
+
+If No, add a short description to describe the issues encountered.
+
+
+
+**References**
+
+1. [HBF, CP476 Assignment 2](a2.html)
+2. Add your references used in developing your solutions. 

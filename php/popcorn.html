@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Popcorn Sales - for PHP handling</title>
+</head>
+
+<body>
+  <h2>Popcorn order form</h2>
+
+  <form action="popcorn.php" method="get">
+    <table>
+
+      <!-- Text widgets for the customer's name and address -->
+      <tbody>
+        <tr>
+          <td> Buyer's Name: </td>
+          <td> <input name="name" size="30" type="text"></td>
+        </tr>
+        <tr>
+          <td> Street Address: </td>
+          <td> <input name="street" size="30" type="text"></td>
+        </tr>
+        <tr>
+          <td> City, State, Zip: </td>
+          <td> <input name="city" size="30" type="text"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table border="1">
+      <!-- First, the column headings -->
+      <tbody>
+        <tr>
+          <th> Product </th>
+          <th> Price </th>
+          <th> Quantity </th>
+        </tr>
+        <!-- Now, the table data entries -->
+        <tr>
+          <td> Unpopped Popcorn (1 lb.) </td>
+          <td> $3.00 </td>
+          <td align="center"> <input name="unpop" size="3" type="text"></td>
+        </tr>
+        <tr>
+          <td> Caramel Popcorn (2 lb. canister) </td>
+          <td> $3.50 </td>
+          <td align="center"> <input name="caramel" size="3" type="text"> </td>
+        </tr>
+        <tr>
+          <td> Caramel Nut Popcorn (2 lb. canister) </td>
+          <td> $4.50 </td>
+          <td align="center"> <input name="caramelnut" size="3" type="text"> </td>
+        </tr>
+        <tr>
+          <td> Toffey Nut Popcorn (2 lb. canister) </td>
+          <td> $5.00 </td>
+          <td align="center"> <input name="toffeynut" size="3" type="text"> </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <!-- The radio buttons for the payment method -->
+    </p>
+
+    <h3> Payment Method </h3>
+    <p>
+      <input name="payment" value="visa" checked="checked" type="radio"> Visa <br>
+      <input name="payment" value="mc" type="radio">
+      Master Card <br>
+      <input name="payment" value="discover" type="radio">
+      Discover <br>
+      <input name="payment" value="check" type="radio">
+      Check <br>
+      <br>
+      <!-- The submit and reset buttons -->
+      <input value="Submit Order" type="submit"><input value="Clear Order Form" type="reset">
+    </p>
+  </form>
+</body>
+</html>

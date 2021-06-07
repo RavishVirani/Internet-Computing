@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>Jquery example</title>
+    <script src="jquery-3.5.1.js"></script>
+    <script>
+        function requestCustomerInfo() {
+            var id = $('#txtCustomerId').val();
+
+            $.ajax({
+                type: "POST",
+                url: "customer_html.php",
+                data: {cid:id}
+            }).done(function (result) {
+                $("#divCustomerInfo").html("Customer info: " + result);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <p>Enter customer ID number to retrieve information:</p>
+    <p>Customer ID: <input type="text" id="txtCustomerId" value="" size="20" /></p>
+    <p><input type="button" value="Get Customer Info" onclick="requestCustomerInfo()" /></p>
+    <div id="divCustomerInfo"></div>
+</body>
+
+</html>

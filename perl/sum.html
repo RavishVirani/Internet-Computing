@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sum Calculator</title>
+</head>
+<body>
+<h2>Sum Calculator</h2>
+<h3>Get form</h3>
+<form action="sum.pl" method="get">
+  <table>
+  <tbody>
+      <tr>
+        <td>First Number</td>
+        <td><input size="10" name="num1" /> </td>
+      </tr>
+      <tr>
+        <td>Second Number</td>
+        <td><input size="10" name="num2" /> </td>
+      </tr>
+    </tbody>
+  </table>
+  <input value="reset" type="reset"/> <input value="Calculate the sum" type="submit"/>
+</form>
+
+<h3>Post form</h3>
+<form action="sum.pl" method="post">
+  <table>
+  <tbody>
+      <tr>
+        <td>First Number</td>
+        <td><input size="10" name="num1" /> </td>
+      </tr>
+      <tr>
+        <td>Second Number</td>
+        <td><input size="10" name="num2" /> </td>
+      </tr>
+    </tbody>
+  </table>
+  <input value="reset" type="reset"/> <input value="Calculate the sum" type="submit"/>
+</form>
+</body>
+</html>
